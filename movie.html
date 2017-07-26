@@ -12,17 +12,16 @@
 
 </head>
 <body>
-	<div data-role="page" id="home">
+	<div data-role="page" id="movie">
 		<div data-role="header" data-theme="b">
 			<h1>Movie Listings</h1>
+			<a href="index.html" class="ui-btn">back</a>
 		</div>
 		<div data-role="main">
-			<form id="searchForm">
-				<div class="ui-field-contain">
-					<input type="text" name="searchText" id="searchText" placeholder="Search for a movie">
-				</div>
-			</form>
-			<ul id="movies" data-role="listview"></ul>
+			<div id="movieTop">
+				<br><br>
+				<ul id="movieDetails" data-role="listview">
+			</div>
 		</div>
 		<div data-role="footer" style="text-align: center" data-theme="b">
 			<p>OMDB &copy; 2017</p>
