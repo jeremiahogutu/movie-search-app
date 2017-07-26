@@ -18,8 +18,8 @@ function movieClicked(id){
 	$.mobile.changePage('movie.html');
 }
 
-//Get movies from OMDB API
 
+//Get movies from OMDB API
 function getMovies(searchText){
 	$.ajax({
 		method:'GET',
