@@ -6,6 +6,12 @@ $(document).ready(function() {
 	})
 });
 
+//before movie details page
+$(document).on('pagebeforeshow', '#movie', function(){
+	let movieId = sessionStorage.getItem('movieId');
+	getMovie(movieId)
+})
+
 //single movie selected
 function movieClicked(id){
 	sessionStorage.setItem('movieId', id);
@@ -34,5 +40,33 @@ function getMovies(searchText){
 			`;
 		});
 		$('#movies').html(output).listview('refresh');
+	});
+}
+
+function getMovie(movieId){
+		$.ajax({
+		method:'GET',
+		url: 'http://www.omdbapi.com/?i='+movieId+'&apikey=dd77a175'
+	}).done(function(movie){
+		console.log(movie);
+		let movieTop = `
+			<div style="text-align:center">
+				<h1>${movie.Title}</h1>
+				<img src="${movie.Poster}">
+			</div>
+		`;
+		$('#movieTop').html(movieTop);
+
+		let movieDetails = `
+			<li><strong>Genre:</strong> ${movie.Genre}</li>
+			<li><strong>Rated:</strong> ${movie.Rated}</li>
+			<li><strong>Released:</strong> ${movie.Released}</li>
+			<li><strong>Runtime:</strong> ${movie.Runtime}</li>
+			<li><strong>IMDB Rating:</strong> ${movie.imdbRating}</li>
+			<li><strong>IMDB votes:</strong> ${movie.imdbVotes}</li>
+			<li><strong>Actors:</strong> ${movie.Actors}</li>
+			<li><strong>Director:</strong> ${movie.Director}</li>
+		`;
+		$('#movieDetails').html(movieDetails).listview('refresh');
 	});
 }
