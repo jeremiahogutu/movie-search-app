@@ -15,7 +15,7 @@ $(document).on('pagebeforeshow', '#movie', function(){
 //single movie selected
 function movieClicked(id){
 	sessionStorage.setItem('movieId', id);
-	$.mobile.changePage('pages/movie.html');
+	$.mobile.changePage('../pages/movie.html');
 }
 
 
