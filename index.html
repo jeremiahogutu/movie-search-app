@@ -8,8 +8,27 @@
 
 </head>
 <body>
+	<div data-role="page" id="home">
+		<div data-role="header">
+			<h1>Movie Listings</h1>
+		</div>
+		<div data-role="main">
+			<form id="searchForm">
+				<div class="ui-field-contain">
+					<input type="text" name="searchText" id="searchText" placeholder="Search for a movie">
+				</div>
+			</form>
+			<ul id="movies" data-role="listview"></ul>
+		</div>
+		<div data-role="footer" style="text-align: center">
+			<p>OMDB &copy; 2017</p>
+		</div>
+	</div>
 	<h1>Jquery Mobile Boiler</h1>
+	<script
+	src="http://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<script src="js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
