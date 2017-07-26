@@ -23,7 +23,7 @@ function movieClicked(id){
 function getMovies(searchText){
 	$.ajax({
 		method:'GET',
-		url: 'http://www.omdbapi.com/?s='+searchText+'&apikey=dd77a175'
+		url: 'https://www.omdbapi.com/?s='+searchText+'&apikey=dd77a175'
 	}).done(function(data){
 		let movies = data.Search;
 		let output = '';
@@ -46,7 +46,7 @@ function getMovies(searchText){
 function getMovie(movieId){
 		$.ajax({
 		method:'GET',
-		url: 'http://www.omdbapi.com/?i='+movieId+'&apikey=dd77a175'
+		url: 'https://www.omdbapi.com/?i='+movieId+'&apikey=dd77a175'
 	}).done(function(movie){
 		console.log(movie);
 		let movieTop = `
